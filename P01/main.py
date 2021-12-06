@@ -104,7 +104,6 @@ def create_account_entry():
     new_account = Account(
         account_data["accountId"],
         account_data["ballance"],
-        account_data["accountNumber"],
         account_data["customerId"]
     )
     account_to_return = account_service.service_create_account(new_account)

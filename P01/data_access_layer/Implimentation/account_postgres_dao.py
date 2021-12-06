@@ -6,20 +6,20 @@ from psycopg import connect, OperationalError, Error
 
 
 class AccountPostgresDAO(AccountDao):
-    account_number_generator = 1000
+
 
     def create_account(self, account: Account) -> Account:
 
-        sql = "insert into account values(default, %s, %s, %s) returning account_id"
-        AccountPostgresDAO.account_number_generator += 1
+        sql = "insert into account values(default, %s, %s) returning account_id"
+
         cursor = connection.cursor()
 
-        cursor.execute(sql, (account.ballance, AccountPostgresDAO.account_number_generator, account.customer_id))
+        cursor.execute(sql, (account.ballance, account.customer_id))
 
         connection.commit()
         acco = cursor.fetchone()[0]
         account.accountid = acco
-        account.account_number = AccountPostgresDAO.account_number_generator
+
         return account
 
 
