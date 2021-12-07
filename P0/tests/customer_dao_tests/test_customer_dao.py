@@ -4,12 +4,13 @@ from entities.Customer import Customer
 
 customer_postgres_dao = CustomerPostgresDAO()
 
-testcustomer = Customer(0, 999, " Joe", "tj", 87787)
+testcustomer = Customer(0, 9956, " Joe", "tj", 87787)
 updatedone = Customer(11, 999 , "mo111hsen", "tj", 10000122)
 
 def test_create_customer_success():
-    created_customer = customer_postgres_dao.create_new_customer(testcustomer)
-    assert created_customer.customerid !=0
+
+        created_customer = customer_postgres_dao.create_new_customer(testcustomer)
+        assert created_customer.customerid !=0
 
 def test_get_customer_by_id_success():
     returned_customer =  customer_postgres_dao.get_customer_by_id(10)

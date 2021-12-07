@@ -8,7 +8,7 @@ class Account:
     def make_Account_dictionary(self):
         return {
             "accountId": self.accountid,
-            "balance": self.ballance,
+            "ballance": self.ballance,
             "customerId": self.customer_id,
         }
 

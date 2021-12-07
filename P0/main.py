@@ -8,6 +8,9 @@ from service_layer.implimentation_services.customer_service_impl import Customer
 from custom_exceptions.CustomException import customexception
 from data_access_layer.Implimentation.account_postgres_dao import AccountPostgresDAO
 from psycopg import connect, OperationalError, Error
+import logging
+logging.basicConfig(filename="records.log", level=logging.DEBUG, format=f"%(asctime)s %(levelname)s %(message)s")
+
 
 app: Flask = Flask(__name__)
 
